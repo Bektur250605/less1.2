@@ -38,19 +38,19 @@ class Bank{
     }
     func clientCredit(name: Client ,choose term: Int, totalCredit: Int, termCredit: Int) {
         if term == 1 {
-            name.totalCredit = totalCredit / 100 * 30 + termCredit
+            name.totalCredit = totalCredit / 100 * 30 + totalCredit
             
         }
         if term == 2 {
-            name.totalCredit = totalCredit / 100 * 15 + termCredit
+            name.totalCredit = totalCredit / 100 * 15 + totalCredit
         }
         if term == 3 {
-            name.totalCredit = totalCredit / 100 * 10 + termCredit
+            name.totalCredit = totalCredit / 100 * 10 + totalCredit
         }
         
         
         for i in clients{
-            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(name.totalCredit),  credit term - \(termCredit), he payed - \(i.totalPay) ")
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(name.totalCredit),  credit term - \(termCredit) years, he payed - \(i.totalPay) ")
             
         }
     }
@@ -66,7 +66,7 @@ class Bank{
 var bektur = Client(name: "Bektur", surname: "Karimov", secondName: "Erlanbekovich", totalCredit: 0, termCredit: 0)
 var bank = Bank(name: "Optima", clients: [bektur])
 
-bank.clientCredit(name: bektur, choose: 2, totalCredit:100000 , termCredit:2000)
+
 bank.PayCredit(to: bektur, quanity: 30000)
-bank.clientCredit(name: bektur, choose: 2, totalCredit:2000 , termCredit:2000)
+bank.clientCredit(name: bektur, choose: 2, totalCredit: 30000 , termCredit:2)
 //bank.showInfo()
