@@ -18,11 +18,8 @@ class Client{
         self.totalPay = totalPay
     }
     
-    func showInfo(){
-        print("client \(name), surname\(surname), second name \(secondName), his credit \(totalPay),  credit term \(termCredit) KGZ , he payed \(totalPay) KGS. ")
-    }
+    
 }
-
 
 class Bank{
     var name: String
@@ -36,21 +33,21 @@ class Bank{
         bank.totalCredit -= quanity
         bank.totalPay += quanity
     }
-    func clientCredit(name: Client ,choose term: Int, totalCredit: Int, termCredit: Int) {
+    func clientCredit(name: Client ,choose term: Int, totalPay: Int) {
         if term == 1 {
-            name.totalCredit = totalCredit / 100 * 30 + totalCredit
+            name.totalPay = totalPay / 100 * 30 + totalPay
             
         }
         if term == 2 {
-            name.totalCredit = totalCredit / 100 * 15 + totalCredit
+            name.totalPay = totalPay / 100 * 15 + totalPay
         }
         if term == 3 {
-            name.totalCredit = totalCredit / 100 * 10 + totalCredit
+            name.totalPay = totalPay / 100 * 10 + totalPay
         }
         
         
         for i in clients{
-            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(name.totalCredit),  credit term - \(termCredit) years, he payed - \(i.totalPay) ")
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(i.totalCredit),  credit term - \(term) years, he need to pay - \(name.totalPay) ")
             
         }
     }
@@ -68,5 +65,269 @@ var bank = Bank(name: "Optima", clients: [bektur])
 
 
 bank.PayCredit(to: bektur, quanity: 30000)
-bank.clientCredit(name: bektur, choose: 2, totalCredit: 30000 , termCredit:2)
+bank.clientCredit(name: bektur, choose: 2, totalPay: 30000)
+//bank.showInfo()
+
+class Client{
+    var name: String
+    var surname: String
+    var secondName: String
+    var totalCredit: Int
+    var termCredit: Int
+    var totalPay: Int = 0
+    init(name: String, surname: String, secondName: String, totalCredit: Int, termCredit: Int, totalPay: Int = 0) {
+        self.name = name
+        self.surname = surname
+        self.secondName = secondName
+        self.totalCredit = totalCredit
+        self.termCredit = termCredit
+        self.totalPay = totalPay
+    }
+    
+    
+}
+
+class Bank{
+    var name: String
+    var clients: [Client] = []
+    init(name: String, clients: [Client]) {
+        self.name = name
+        self.clients = clients
+    }
+    
+    func PayCredit (to bank: Client, quanity: Int){
+        bank.totalCredit -= quanity
+        bank.totalPay += quanity
+    }
+    func clientCredit(name: Client ,choose term: Int, totalPay: Int) {
+        if term == 1 {
+            name.totalPay = totalPay / 100 * 30 + totalPay
+            
+        }
+        if term == 2 {
+            name.totalPay = totalPay / 100 * 15 + totalPay
+        }
+        if term == 3 {
+            name.totalPay = totalPay / 100 * 10 + totalPay
+        }
+        
+        
+        for i in clients{
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(i.totalCredit),  credit term - \(term) years, he need to pay - \(name.totalPay) ")
+            
+        }
+    }
+    
+
+    
+//    func showInfo(){
+//
+//    }
+//
+}
+
+var bektur = Client(name: "Bektur", surname: "Karimov", secondName: "Erlanbekovich", totalCredit: 0, termCredit: 0)
+var bank = Bank(name: "Optima", clients: [bektur])
+
+
+bank.PayCredit(to: bektur, quanity: 30000)
+bank.clientCredit(name: bektur, choose: 2, totalPay: 30000)
+//bank.showInfo()
+
+class Client{
+    var name: String
+    var surname: String
+    var secondName: String
+    var totalCredit: Int
+    var termCredit: Int
+    var totalPay: Int = 0
+    init(name: String, surname: String, secondName: String, totalCredit: Int, termCredit: Int, totalPay: Int = 0) {
+        self.name = name
+        self.surname = surname
+        self.secondName = secondName
+        self.totalCredit = totalCredit
+        self.termCredit = termCredit
+        self.totalPay = totalPay
+    }
+    
+    
+}
+
+class Bank{
+    var name: String
+    var clients: [Client] = []
+    init(name: String, clients: [Client]) {
+        self.name = name
+        self.clients = clients
+    }
+    
+    func PayCredit (to bank: Client, quanity: Int){
+        bank.totalCredit -= quanity
+        bank.totalPay += quanity
+    }
+    func clientCredit(name: Client ,choose term: Int, totalPay: Int) {
+        if term == 1 {
+            name.totalPay = totalPay / 100 * 30 + totalPay
+            
+        }
+        if term == 2 {
+            name.totalPay = totalPay / 100 * 15 + totalPay
+        }
+        if term == 3 {
+            name.totalPay = totalPay / 100 * 10 + totalPay
+        }
+        
+        
+        for i in clients{
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(i.totalCredit),  credit term - \(term) years, he need to pay - \(name.totalPay) ")
+            
+        }
+    }
+    
+
+    
+//    func showInfo(){
+//
+//    }
+//
+}
+
+var bektur = Client(name: "Bektur", surname: "Karimov", secondName: "Erlanbekovich", totalCredit: 0, termCredit: 0)
+var bank = Bank(name: "Optima", clients: [bektur])
+
+
+bank.PayCredit(to: bektur, quanity: 30000)
+bank.clientCredit(name: bektur, choose: 2, totalPay: 30000)
+//bank.showInfo()
+
+class Client{
+    var name: String
+    var surname: String
+    var secondName: String
+    var totalCredit: Int
+    var termCredit: Int
+    var totalPay: Int = 0
+    init(name: String, surname: String, secondName: String, totalCredit: Int, termCredit: Int, totalPay: Int = 0) {
+        self.name = name
+        self.surname = surname
+        self.secondName = secondName
+        self.totalCredit = totalCredit
+        self.termCredit = termCredit
+        self.totalPay = totalPay
+    }
+    
+    
+}
+
+class Bank{
+    var name: String
+    var clients: [Client] = []
+    init(name: String, clients: [Client]) {
+        self.name = name
+        self.clients = clients
+    }
+    
+    func PayCredit (to bank: Client, quanity: Int){
+        bank.totalCredit -= quanity
+        bank.totalPay += quanity
+    }
+    func clientCredit(name: Client ,choose term: Int, totalPay: Int) {
+        if term == 1 {
+            name.totalPay = totalPay / 100 * 30 + totalPay
+            
+        }
+        if term == 2 {
+            name.totalPay = totalPay / 100 * 15 + totalPay
+        }
+        if term == 3 {
+            name.totalPay = totalPay / 100 * 10 + totalPay
+        }
+        
+        
+        for i in clients{
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(i.totalCredit),  credit term - \(term) years, he need to pay - \(name.totalPay) ")
+            
+        }
+    }
+    
+
+    
+//    func showInfo(){
+//
+//    }
+//
+}
+
+var bektur = Client(name: "Bektur", surname: "Karimov", secondName: "Erlanbekovich", totalCredit: 0, termCredit: 0)
+var bank = Bank(name: "Optima", clients: [bektur])
+
+
+bank.PayCredit(to: bektur, quanity: 30000)
+bank.clientCredit(name: bektur, choose: 2, totalPay: 30000)
+//bank.showInfo()
+
+class Client{
+    var name: String
+    var surname: String
+    var secondName: String
+    var totalCredit: Int
+    var termCredit: Int
+    var totalPay: Int = 0
+    init(name: String, surname: String, secondName: String, totalCredit: Int, termCredit: Int, totalPay: Int = 0) {
+        self.name = name
+        self.surname = surname
+        self.secondName = secondName
+        self.totalCredit = totalCredit
+        self.termCredit = termCredit
+        self.totalPay = totalPay
+    }
+    
+    
+}
+
+class Bank{
+    var name: String
+    var clients: [Client] = []
+    init(name: String, clients: [Client]) {
+        self.name = name
+        self.clients = clients
+    }
+    
+    func PayCredit (to bank: Client, quanity: Int){
+        bank.totalCredit -= quanity
+        bank.totalPay += quanity
+    }
+    func clientCredit(name: Client ,choose term: Int, totalPay: Int) {
+        if term == 1 {
+            name.totalPay = totalPay / 100 * 30 + totalPay
+            
+        }
+        if term == 2 {
+            name.totalPay = totalPay / 100 * 15 + totalPay
+        }
+        if term == 3 {
+            name.totalPay = totalPay / 100 * 10 + totalPay
+        }
+        
+        
+        for i in clients{
+            print("client - \(i.name), surname - \(i.surname), second name - \(i.secondName), his credit - \(i.totalCredit),  credit term - \(term) years, he need to pay - \(name.totalPay) ")
+            
+        }
+    }
+    
+
+    
+//    func showInfo(){
+//
+//    }
+//
+}
+
+var bektur = Client(name: "Bektur", surname: "Karimov", secondName: "Erlanbekovich", totalCredit: 0, termCredit: 0)
+var bank = Bank(name: "Optima", clients: [bektur])
+
+
+bank.PayCredit(to: bektur, quanity: 30000)
+bank.clientCredit(name: bektur, choose: 2, totalPay: 30000)
 //bank.showInfo()
